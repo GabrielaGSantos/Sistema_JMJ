@@ -10,13 +10,13 @@ html
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		//if lte IE 8
 			script(src="/assets/js/html5shiv.js")
-		link(rel="stylesheet", href="/login/assets/css/main.css")
+		link(rel="stylesheet", href="/assets/css/login.css")
 		//if lte IE 9
-			link(rel="stylesheet", href="/login/assets/css/ie9.css")
+			link(rel="stylesheet", href="/assets/css/ie9.css")
 		//if lte IE 8
-			link(rel="stylesheet", href="/login/assets/css/ie8.css")
+			link(rel="stylesheet", href="/assets/css/ie8.css")
 		noscript
-			link(rel="stylesheet", href="/login/assets/css/noscript.css")
+			link(rel="stylesheet", href="/assets/css/noscript.css")
 	body
 		// Wrapper
 		#wrapper
@@ -24,56 +24,35 @@ html
 			section#main
 				header
 					span.avatar
-						img(src="images/avatar.jpg", alt="")
-					h1 Jane Doe
-					p Senior Psychonautics Engineer
-				hr
-				h2 Extra Stuff!
-				form(method="post", action="#")
-					.field
-						input#name(type="text", name="name", placeholder="Name")
-					.field
-						input#email(type="email", name="email", placeholder="Email")
-					.field
-						.select-wrapper
-							select#department(name="department")
-								option(value="") Department
-								option(value="sales") Sales
-								option(value="tech") Tech Support
-								option(value="null") /dev/null
-					.field
-						textarea#message(name="message", placeholder="Message", rows="4")
-					.field
-						input#human(type="checkbox", name="human")
-						label(for="human") I'm a human
-					.field
-						label But are you a robot?
-						input#robot_yes(type="radio", name="robot")
-						label(for="robot_yes") Yes
-						input#robot_no(type="radio", name="robot")
-						label(for="robot_no") No
+						img(src="images/avatar.jpg", alt="", width="100em")
+					h1 Login
+
+					form(method="post", action="#")
+						.field
+							input#name(type="text", name="name", placeholder="CPF")
+						.field
+							input#email(type="password", name="senha", placeholder="Senha")
+						.field
+							.select-wrapper
+								select#department(name="department")
+									option(value="") Grupo
 					ul.actions
 						li
-							a.button(href="#") Get Started
+							a.button(href="#") Entrar					
 				hr
-				footer
-					ul.icons
-						li
-							a.fa-twitter(href="#") Twitter
-						li
-							a.fa-instagram(href="#") Instagram
-						li
-							a.fa-facebook(href="#") Facebook
+				a(for="redefinir_senha") Esqueci minha senha
+				
 			// Footer
 			footer#footer
 				ul.copyright
-					li © Jane Doe
+					li ©Todos os direitos reservados
 					li
 						| Design: 
-						a(href="http://html5up.net") HTML5 UP
+						a(href="http://html5up.net") Gabriela
+			
 		// Scripts
 		//if lte IE 8
-			script(src="/login/assets/js/respond.min.js")
+			script(src="/assets/js/respond.min.js")
 		script.
 			if ('addEventListener' in window) {
 			window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\\bis-loading\b/, ''); });
