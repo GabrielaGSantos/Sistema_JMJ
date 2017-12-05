@@ -1,0 +1,81 @@
+doctype html
+//
+	Identity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+html
+	head
+		title Identity by HTML5 UP
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		//if lte IE 8
+			script(src="/assets/js/html5shiv.js")
+		link(rel="stylesheet", href="/login/assets/css/main.css")
+		//if lte IE 9
+			link(rel="stylesheet", href="/login/assets/css/ie9.css")
+		//if lte IE 8
+			link(rel="stylesheet", href="/login/assets/css/ie8.css")
+		noscript
+			link(rel="stylesheet", href="/login/assets/css/noscript.css")
+	body
+		// Wrapper
+		#wrapper
+			// Main
+			section#main
+				header
+					span.avatar
+						img(src="images/avatar.jpg", alt="")
+					h1 Jane Doe
+					p Senior Psychonautics Engineer
+				hr
+				h2 Extra Stuff!
+				form(method="post", action="#")
+					.field
+						input#name(type="text", name="name", placeholder="Name")
+					.field
+						input#email(type="email", name="email", placeholder="Email")
+					.field
+						.select-wrapper
+							select#department(name="department")
+								option(value="") Department
+								option(value="sales") Sales
+								option(value="tech") Tech Support
+								option(value="null") /dev/null
+					.field
+						textarea#message(name="message", placeholder="Message", rows="4")
+					.field
+						input#human(type="checkbox", name="human")
+						label(for="human") I'm a human
+					.field
+						label But are you a robot?
+						input#robot_yes(type="radio", name="robot")
+						label(for="robot_yes") Yes
+						input#robot_no(type="radio", name="robot")
+						label(for="robot_no") No
+					ul.actions
+						li
+							a.button(href="#") Get Started
+				hr
+				footer
+					ul.icons
+						li
+							a.fa-twitter(href="#") Twitter
+						li
+							a.fa-instagram(href="#") Instagram
+						li
+							a.fa-facebook(href="#") Facebook
+			// Footer
+			footer#footer
+				ul.copyright
+					li © Jane Doe
+					li
+						| Design: 
+						a(href="http://html5up.net") HTML5 UP
+		// Scripts
+		//if lte IE 8
+			script(src="/login/assets/js/respond.min.js")
+		script.
+			if ('addEventListener' in window) {
+			window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\\bis-loading\b/, ''); });
+			document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\\.0)/) ? ' is-ie' : '');
+			}
