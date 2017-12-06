@@ -1,0 +1,74 @@
+doctype html
+//
+    Dimension by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+html
+    head
+        title Sistema JMJ
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no")
+        link(rel="stylesheet", href="/assets/css/main.css")
+        link(rel="stylesheet", href="/assets/icomoon/style.css")
+        //if lte IE 9
+            link(rel="stylesheet", href="/assets/css/ie9.css")
+        noscript
+            link(rel="stylesheet", href="/assets/css/noscript.css")
+    body
+        // Wrapper
+        #wrapper
+            #div_teste 
+                a.button.icon.fa-user(href="login") Gabriela            
+                           
+            br
+            br
+
+            #main           
+                article.active
+                    header#header            
+                        nav
+                            ul
+                                li
+                                    a(href="jmj")  &nbsp JMJ'S &nbsp
+                                li
+                                    a(href="/grupos") &nbsp GRUPOS &nbsp 
+                                li
+                                    a(href="peregrinos") PEREGRINOS                                              
+                                li
+                                    a(href="pagamento") PAGAMENTOS    
+                    br
+                    br
+                    
+                    section
+                        h3.major Cadastro de Grupo
+                        form(method="post", action="#")
+                            .field.half.first
+                                label(for="cidade_grupo") Cidade
+                                input#demo-name(type="text", name="cidade_grupo", value="", placeholder="Exemplo: Cuiaba")
+                            .field.half
+                                label(for="estado_grupo") Estado
+                                .select-wrapper
+                                    select#demo-category(name="estado_grupo")
+                                        option(value="") - Estado -
+                                        option(value="MT") Mato Grosso
+                            .field
+                                label(for="catequista_responsavel") Catequista Responsável
+                                input#demo-name(type="text", name="catequista_responsavel", value="", placeholder="nome")
+                            .field
+                                label(for="custo_aproximado") Custo Aproximado 
+                                input#demo-name(type="text", name="custo_aproximado", value="", placeholder="(R$ 9.999.999,99)")
+                            .field
+                                label(for="observacao") Observações
+                                textarea#demo-message(name="observacao", placeholder="Anotações", rows="6")
+                            ul.actions
+                                li
+                                    input.special(type="submit", value="Cadastrar Grupo")
+                                li
+                                    input(type="reset", value="Cancelar")
+            // Footer
+            footer#footer
+                p.copyrigh
+                    | © Todos os direitos reservados. Design: 
+                    a(href="https://html5up.net") GABRIELA
+                    | .
+#bg
