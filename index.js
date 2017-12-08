@@ -13,6 +13,9 @@ app.set('view engine', 'pug')
 routes.main(app)
 routes.jmj(app)
 routes.grupo(app)
+routes.peregrino(app)
+routes.outros(app)
+routes.pagamentos(app)
 
 // Inicializar Servidor
 var config = require('./config.json')

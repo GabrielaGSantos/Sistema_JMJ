@@ -17,8 +17,7 @@ html
     body
         // Wrapper
         #wrapper
-            #div_teste 
-               a.button.icon.fa-user(href="login") #{usuario}
+            include ./usuario.pug
             // Header            
             header#header
                 .logo
@@ -30,13 +29,15 @@ html
                 nav
                     ul
                         li
-                            a(href="jmj")  &nbsp JMJ'S &nbsp 
+                            a(href="/jmj")  &nbsp JMJ'S &nbsp 
                         li
                             a(href="/grupos") &nbsp GRUPOS &nbsp 
                         li
-                            a(href="peregrinos") PEREGRINOS                                              
+                            a(href="/peregrinos") PEREGRINOS                                              
                         li
-                            a(href="pagamento") PAGAMENTOS
+                            a(href="/pagamento") PAGAMENTOS
+                        li
+                            a(href="/outros") OUTROS
             br 
             // Footer
             footer#footer

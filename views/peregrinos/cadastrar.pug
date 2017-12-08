@@ -1,0 +1,101 @@
+doctype html
+//
+    Dimension by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+html
+    head
+        title Sistema JMJ
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no")
+        link(rel="stylesheet", href="/assets/css/main.css")
+        link(rel="stylesheet", href="/assets/icomoon/style.css")
+        //if lte IE 9
+            link(rel="stylesheet", href="/assets/css/ie9.css")
+        noscript
+            link(rel="stylesheet", href="/assets/css/noscript.css")
+    body
+        // Wrapper
+        #wrapper
+            include ../usuario.pug  
+            br
+            br
+
+            #main           
+                article.active
+                    include ../menu.pug   
+                    br
+                    br
+                    
+                    section
+                        h3.major Cadastro de Peregrino
+                        form(method="post", action="#")
+                            .field
+                                label(for="nome") Nome Completo
+                                input#demo-name(type="text", name="nome", value="", placeholder="")
+                            label(for="nome") Sexo
+                            .field                               
+                                input#demo-priority-low(type="radio", name="demo-priority", checked="")
+                                label(for="demo-priority-low") Feminino
+                                input#demo-priority-high(type="radio", name="demo-priority", )
+                                label(for="demo-priority-high") Masculino
+                            .field
+                                label(for="cpf") CPF
+                                input#demo-name(type="text", name="cpf", value="", placeholder="Exemplo: 999.999.999-99")
+                            .field.half.first
+                                label(for="senha") Senha
+                                input#demo-name(type="password", name="senha", value="", placeholder="")
+                            .field.half
+                                label(for="senha") Confirmar Senha
+                                input#demo-name(type="password", name="senha", value="", placeholder="")
+                            .field.half.first
+                                label(for="rg") RG
+                                input#demo-name(type="text", name="rg", value="", placeholder="")
+                            .field.half
+                                label(for="status") Status do Peregrino
+                                .select-wrapper
+                                    select#demo-category(name="status")
+                                        option(value="") - Status -
+                                        option(value="A") Ativo
+                                        option(value="I") Inativo
+                            .field.half.first
+                                label(for="passaporte") Passaporte
+                                input#demo-name(type="text", name="passaporte", value="", placeholder="")
+                            .field.half
+                                label(for="qntd_padrinhos") Quantidade de Padrinhos
+                                input#demo-name(type="text", name="qntd_padrinhos", value="", placeholder="")
+                            .field
+                                label(for="telefone") Telefone Peregrino
+                                input#demo-name(type="text", name="telefone", value="", placeholder="Exemplo: (xx) 99999-9999, (xx) 00000-0000 ...")
+                            .field
+                                label(for="contato_emergencia") Contato(s) de Emergência
+                                input#demo-name(type="text", name="contato_emergencia", value="", placeholder="Exemplo: Mãe: Dona Maria telefone: (xx) 99999-9999 ...")
+                            .field.half.first
+                                label(for="rg") Paróquia
+                                .select-wrapper
+                                    select#demo-category(name="paroquia")
+                                        option(value="") - Paróquia -
+                                        option(value="A") São Gonçalo
+                                        option(value="I") Guadalupe
+                            .field.half
+                                label(for="comunidade") Comunidade
+                                .select-wrapper
+                                    select#demo-category(name="comunidade")
+                                        option(value="") - Comunidade -
+                                        option(value="A") 1
+                                        option(value="I") 2
+                            .field
+                                label(for="observacao") Observações
+                                textarea#demo-message(name="observacao", placeholder="Anotações", rows="6")
+                            ul.actions
+                                li
+                                    input.special(type="submit", value="Cadastrar Peregrino")
+                                li
+                                    input(type="reset", value="Cancelar")
+            // Footer
+            footer#footer
+                p.copyrigh
+                    | © Todos os direitos reservados. Design: 
+                    a(href="https://html5up.net") GABRIELA
+                    | .
+#bg

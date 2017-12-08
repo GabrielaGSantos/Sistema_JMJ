@@ -1,0 +1,58 @@
+doctype html
+//
+    Dimension by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+html
+    head
+        title Sistema JMJ
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no")
+        link(rel="stylesheet", href="/assets/css/main.css")
+        link(rel="stylesheet", href="/assets/icomoon/style.css")
+        //if lte IE 9
+            link(rel="stylesheet", href="/assets/css/ie9.css")
+        noscript
+            link(rel="stylesheet", href="/assets/css/noscript.css")
+    body
+        // Wrapper
+        #wrapper
+            include ../usuario.pug                            
+            br
+            br
+            #main 
+                article.active                                  
+                    include ../menu.pug    
+                    br
+                    br
+                    
+                    section
+                        h3.major Peregrinos
+                        .table-wrapper
+                            table
+                                thead
+                                    tr
+                                        th Quantidade de Peregrinos 
+                                        th(style="padding-left: 25em") Pesquisar Peregrino
+                                        th Editar Peregrino
+                                        th Excluir Peregrino
+                                tbody
+                                    tr
+                                        td(style="padding-left: 5em") 1
+                                        td(style="padding-left: 22em") 
+                                            a.button(href="#") Pesquisar 
+                                        td(style="padding-right: 2.1em")  
+                                            a.button(href="#") Editar 
+                                        td
+                                            a.button(href="#") Excluir                                                                       
+                                
+                            a.button.special(href="/peregrinos/cadastrar" style="margin-left: 60em") Cadastrar Peregrino                                            
+                                            
+                        
+            // Footer
+            footer#footer
+                p.copyrigh
+                    | © Todos os direitos reservados. Design: 
+                    a(href="https://html5up.net") GABRIELA
+                    | .
+#bg
