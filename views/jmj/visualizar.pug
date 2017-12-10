@@ -28,18 +28,16 @@ html
                     br
                     
                     section
-                        h3.major Cadastro de JMJ
+                        h3.major DADOS DA JMJ
                         form(method="post", action="#")
-                            .field.half.first
+                            .field.titulo.visualizar
                                 label(for="pais") País da JMJ
-                                input#demo-name(type="text", name="pais", value="", placeholder="Exemplo: Polônia")
-                            .field.half
-                                label(for="cidade") Cidade da JMJ
+                            .field.titulo
                                 input#demo-name(type="text", name="cidade", value="", placeholder="cidade")                            
-                            .field.half.first
+                            .field
                                 label(for="pais") Ano da JMJ
                                 input#demo-name(type="text", name="pais", value="", placeholder="Exemplo: 2019")
-                            .field.half
+                            .field
                                 label(for="periodo") Periodo da JMJ
                                 input#demo-name(type="text", name="periodo", value="", placeholder="Exemplo: 08/12/19 até 10/12/19")
                             .field
@@ -50,9 +48,7 @@ html
                                 textarea#demo-message(name="observacao", placeholder="Anotações", rows="6")
                             ul.actions
                                 li
-                                    input.special(type="submit", value="Cadastrar JMJ")
-                                li
-                                    a.button(href="/jmj") Cancelar 
+                                    a.button.special(href="/jmj") Voltar 
             // Footer
             footer#footer
                 p.copyrigh

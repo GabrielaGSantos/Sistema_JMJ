@@ -27,24 +27,16 @@ html
                     br
                     br
                     section
-                        h3.major Cadastro de Paróquia
-                        form(method="post", action="#").paroquia
-                            .field
-                                label(for="pais") Nome da Paróquia
-                                input(type="text", name="pais", value="", placeholder="Exemplo: São Gonçalo")
-                        h3.major Cadastro de Comunidades
-                        form(method="post", action="#").comunidade
-                            div#lista_comunidades
-                                .field.half.first
-                                    label(for="comunidade_1") Número da Comunidade
-                                    input(type="text", name="comunidade_1", value="", placeholder="Exemplo: 1 ")
-                                .field.half
-                                    label(for="responsavel_1") Responsável da Comunidade
-                                    input(type="text", name="responsavel_1", value="", placeholder="Exemplo: Luciano")
-                            a.button.icon.fa-plus#adicionar_comunidade Comunidade
+                        h3.major Cadastro de Funções
+                        form(method="post", action="#").funcoes
+                            div#lista_funcoes
+                                .field
+                                    label(for="funcao_1") Função 
+                                    input(type="text", name="funcao_1", value="", placeholder="Exemplo: Catequista")
+                            a.button.icon.fa-plus(href="#")#adicionar_funcoes Função
                             ul.actions
                                 li
-                                    input.special(type="submit", value="Cadastrar Paróquia")
+                                    input.special(type="submit", value="Cadastrar Funções")
                                 li
                                     input(type="reset", value="Cancelar")
             // Footer
@@ -57,4 +49,4 @@ html
 
 //scripts
 script(src="/assets/js/jquery.min.js")
-script(src="/assets/js/adicionar_comunidade.js")
+script(src="/assets/js/adicionar_funcoes.js")

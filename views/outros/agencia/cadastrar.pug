@@ -17,42 +17,45 @@ html
     body
         // Wrapper
         #wrapper
-            include ../usuario.pug  
+            include ../../usuario.pug  
             br
             br
 
             #main           
                 article.active
-                    include ../menu.pug   
+                    include ../../menu.pug   
                     br
                     br
                     
                     section
-                        h3.major Cadastro de JMJ
+                        h3.major Cadastro de Agência de Turismo
                         form(method="post", action="#")
                             .field.half.first
-                                label(for="pais") País da JMJ
-                                input#demo-name(type="text", name="pais", value="", placeholder="Exemplo: Polônia")
+                                label(for="pais") Nome 
+                                input#demo-name(type="text", name="pais", value="", placeholder="")
                             .field.half
-                                label(for="cidade") Cidade da JMJ
-                                input#demo-name(type="text", name="cidade", value="", placeholder="cidade")                            
-                            .field.half.first
-                                label(for="pais") Ano da JMJ
-                                input#demo-name(type="text", name="pais", value="", placeholder="Exemplo: 2019")
-                            .field.half
-                                label(for="periodo") Periodo da JMJ
-                                input#demo-name(type="text", name="periodo", value="", placeholder="Exemplo: 08/12/19 até 10/12/19")
+                                label(for="cidade") Responsável
+                                input#demo-name(type="text", name="cidade", value="", placeholder="")
                             .field
-                                label(for="lema") Lema da JMJ
-                                input#demo-name(type="text", name="lema", value="", placeholder="Lema")
+                                label(for="lema") Dados Bancários
+                                input#demo-name(type="text", name="lema", value="", placeholder="")
+                            .field
+                                label(for="periodo") Endereço
+                                input#demo-name(type="text", name="periodo", value="", placeholder="")
+                            .field.half.first
+                                label(for="pais") Telefone 
+                                input#demo-name(type="text", name="pais", value="", placeholder="")
+                            .field.half
+                                label(for="cidade") E-mail
+                                input#demo-name(type="text", name="cidade", value="", placeholder="")
                             .field
                                 label(for="observacao") Observações
-                                textarea#demo-message(name="observacao", placeholder="Anotações", rows="6")
+                                textarea#demo-message(name="observacao", placeholder="Anotações", rows="4")
                             ul.actions
                                 li
                                     input.special(type="submit", value="Cadastrar JMJ")
                                 li
-                                    a.button(href="/jmj") Cancelar 
+                                    input(type="reset", value="Cancelar")
             // Footer
             footer#footer
                 p.copyrigh

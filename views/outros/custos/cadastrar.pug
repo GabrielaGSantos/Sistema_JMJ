@@ -17,42 +17,42 @@ html
     body
         // Wrapper
         #wrapper
-            include ../usuario.pug  
+            include ../../usuario.pug  
             br
             br
 
             #main           
                 article.active
-                    include ../menu.pug   
+                    include ../../menu.pug   
                     br
                     br
                     
                     section
-                        h3.major Cadastro de JMJ
+                        h3.major Cadastro de Custos da JMJ
                         form(method="post", action="#")
                             .field.half.first
-                                label(for="pais") País da JMJ
-                                input#demo-name(type="text", name="pais", value="", placeholder="Exemplo: Polônia")
+                                label(for="pais") Data Limite de Pagamentos 
+                                input#demo-name(type="text", name="pais", value="", placeholder="")
                             .field.half
-                                label(for="cidade") Cidade da JMJ
-                                input#demo-name(type="text", name="cidade", value="", placeholder="cidade")                            
+                                label(for="cidade") Taxa de Inscrição
+                                input#demo-name(type="text", name="cidade", value="", placeholder="")
                             .field.half.first
-                                label(for="pais") Ano da JMJ
-                                input#demo-name(type="text", name="pais", value="", placeholder="Exemplo: 2019")
+                                label(for="pais") Valor Passagem Internacional 
+                                input#demo-name(type="text", name="pais", value="", placeholder="")
                             .field.half
-                                label(for="periodo") Periodo da JMJ
-                                input#demo-name(type="text", name="periodo", value="", placeholder="Exemplo: 08/12/19 até 10/12/19")
+                                label(for="cidade") Valor Passagem Nacional
+                                input#demo-name(type="text", name="cidade", value="", placeholder="")
                             .field
-                                label(for="lema") Lema da JMJ
-                                input#demo-name(type="text", name="lema", value="", placeholder="Lema")
+                                label(for="observacao") Valor Parte Terrestre
+                                input#demo-name(type="text", name="cidade", value="", placeholder="")
                             .field
                                 label(for="observacao") Observações
-                                textarea#demo-message(name="observacao", placeholder="Anotações", rows="6")
+                                textarea#demo-message(name="observacao", placeholder="Anotações", rows="4")
                             ul.actions
                                 li
-                                    input.special(type="submit", value="Cadastrar JMJ")
+                                    input.special(type="submit", value="Cadastrar Custos")
                                 li
-                                    a.button(href="/jmj") Cancelar 
+                                    input(type="reset", value="Cancelar")
             // Footer
             footer#footer
                 p.copyrigh

@@ -6,10 +6,21 @@ var database = require("./database")
 var express = require("express")
 var app = express()
 var routes = require('./routes')
+var path = require('path')
 
 app.set('view engine', 'pug')
 
+//login
+var passport = require('passport')
+app.use(passport.initialize())
+app.use(passport.session())
+
+var bodyParser = require('body-parser')
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:true}))
+
 // Inicializar rotas
+app.use(express.static(path.join(__dirname,"/public")))
 routes.main(app)
 routes.jmj(app)
 routes.grupo(app)
@@ -27,8 +38,5 @@ app.listen(config.server.port,function(erro){
     else
         console.log("Servidor na Porta: "+config.server.port)
 })
-var path = require('path')
 
-app.get('*',function(req,res){
-    res.sendFile(path.join(__dirname, './public/'+req.params[0]))
-})
+
