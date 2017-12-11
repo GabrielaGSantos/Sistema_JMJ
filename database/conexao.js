@@ -3,17 +3,23 @@ var config = require("../config.json")
 
 var conexao = mysql.createConnection(config.database)
 
-function obterConexao(){
-    conexao.connect(function(erro){
-        if(erro){
-            console.log("Erro ao se conectar ao Banco de Dados: "+erro)
-            process.exit(1)
+function doQuery(query, callback) {
+
+    console.log("Conetado ao Banco de Dados")
+    conexao.query(query, (error, results) => {
+        conexao.end()
+        if (error) {
+            console.log(error)
+            callback(error, null)
         }
-        else{
-            console.log("Conetado ao Banco de Dados")
-            return conexao
+        else {
+            conexao = mysql.createConnection(config.database)            
+            callback(null, results)
         }
     })
+
 }
 
-module.exports = obterConexao
+module.exports = doQuery
+
+

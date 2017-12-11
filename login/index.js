@@ -1,5 +1,5 @@
-var conexao = require("./conexao")
+var passport_local = require("./passport_local")
 
 module.exports = {
-    obterConexao: conexao
+    initialize: passport_local
 }

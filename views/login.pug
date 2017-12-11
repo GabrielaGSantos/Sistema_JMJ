@@ -1,60 +1,62 @@
 doctype html
 //
-	Identity by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    Identity by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 html
-	head
-		title Identity by HTML5 UP
-		meta(charset="utf-8")
-		meta(name="viewport", content="width=device-width, initial-scale=1")
-		//if lte IE 8
-			script(src="/assets/js/html5shiv.js")
-		link(rel="stylesheet", href="/assets/css/login.css")
-		//if lte IE 9
-			link(rel="stylesheet", href="/assets/css/ie9.css")
-		//if lte IE 8
-			link(rel="stylesheet", href="/assets/css/ie8.css")
-		noscript
-			link(rel="stylesheet", href="/assets/css/noscript.css")
-	body
-		// Wrapper
-		#wrapper
-			// Main
-			section#main
-				header
-					span.avatar
-						img(src="images/avatar.jpg", alt="", width="100em")
-					h1 Login
+    head
+        title Identity by HTML5 UP
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        //if lte IE 8
+            script(src="/assets/js/html5shiv.js")
+        link(rel="stylesheet", href="/assets/css/login.css")
+        //if lte IE 9
+            link(rel="stylesheet", href="/assets/css/ie9.css")
+        //if lte IE 8
+            link(rel="stylesheet", href="/assets/css/ie8.css")
+        noscript
+            link(rel="stylesheet", href="/assets/css/noscript.css")
+    body
+        // Wrapper
+        #wrapper
+            // Main
+            section#main
+                header
+                    span.avatar
+                        img(src="images/avatar.jpg", alt="", width="100em")
+                    h1 Login
+                    p= message
 
-					form(method="post", action="#")
-						.field
-							input#name(type="text", name="name", placeholder="CPF")
-						.field
-							input#email(type="password", name="senha", placeholder="Senha")
-						.field
-							.select-wrapper
-								select#department(name="department")
-									option(value="") Grupo
-					ul.actions
-						li
-							a.button(href="#") Entrar					
-				hr
-				a(for="redefinir_senha") Esqueci minha senha
-				
-			// Footer
-			footer#footer
-				ul.copyright
-					li ©Todos os direitos reservados
-					li
-						| Design: 
-						a(href="http://html5up.net") Gabriela
-			
-		// Scripts
-		//if lte IE 8
-			script(src="/assets/js/respond.min.js")
-		script.
-			if ('addEventListener' in window) {
-			window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\\bis-loading\b/, ''); });
-			document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\\.0)/) ? ' is-ie' : '');
-			}
+                    form(method="post", action="/login")
+                        .field
+                            input#name(type="text", name="cpf", placeholder="CPF")
+                        .field
+                            input#email(type="password", name="senha", placeholder="Senha")
+                        //.field
+                            .select-wrapper
+                                select#department(name="department")
+                                    option(value="") Grupo
+                        ul.actions
+                            li
+                                input.special(type="submit", value="Entrar")
+                                
+                hr
+                a(for="redefinir_senha") Esqueci minha senha
+                
+            // Footer
+            footer#footer
+                ul.copyright
+                    li ©Todos os direitos reservados
+                    li
+                        | Design: 
+                        a(href="http://html5up.net") Gabriela
+            
+        // Scripts
+        //if lte IE 8
+            script(src="/assets/js/respond.min.js")
+        script.
+            if ('addEventListener' in window) {
+            window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\\bis-loading\b/, ''); });
+            document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\\.0)/) ? ' is-ie' : '');
+            }

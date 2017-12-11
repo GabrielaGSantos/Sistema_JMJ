@@ -2,7 +2,9 @@
 function inicializarRotas(app){ 
 
     app.get('/jmj',function(req,res){
-        res.render('jmj/jmj')
+        res.render('jmj/jmj',{
+            usuario: req.user.nome.split(' ')[0]
+        })
     })
 
     app.get('/jmj/cadastrar',function(req,res){

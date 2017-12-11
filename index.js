@@ -11,9 +11,30 @@ var path = require('path')
 app.set('view engine', 'pug')
 
 //login
+app.use(require('cookie-parser')())
+app.use(require('express-session')({
+    secret: 'teste de criptografia',
+    resave: true,
+    saveUninitialized: true
+}))
+
+var flash = require('express-flash')
 var passport = require('passport')
+var localStrategy = require('./login')
+localStrategy.initialize(passport)
 app.use(passport.initialize())
 app.use(passport.session())
+app.use(flash())
+
+app.use((req,res,next)=>{
+    res.locals.user = req.user
+    next()
+})
+
+app.use((req,res,next)=>{
+    res.locals.login = req.isAuthenticated()
+    next()
+})
 
 var bodyParser = require('body-parser')
 app.use(bodyParser.json())
@@ -21,7 +42,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 
 // Inicializar rotas
 app.use(express.static(path.join(__dirname,"/public")))
-routes.main(app)
+routes.main(app,passport)
 routes.jmj(app)
 routes.grupo(app)
 routes.peregrino(app)
