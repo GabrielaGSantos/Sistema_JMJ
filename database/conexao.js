@@ -3,21 +3,30 @@ var config = require("../config.json")
 
 var conexao = mysql.createConnection(config.database)
 
-function doQuery(query, callback) {
+function doQuery(query, callback, arguments) {
 
     console.log("Conetado ao Banco de Dados")
-    conexao.query(query, (error, results) => {
-        conexao.end()
-        if (error) {
-            console.log(error)
-            callback(error, null)
-        }
-        else {
-            conexao = mysql.createConnection(config.database)            
-            callback(null, results)
-        }
-    })
-
+    if (!arguments) {
+        conexao.query(query, (error, results) => {
+            if (error) {
+                callback(error, null)
+            }
+            else {
+                conexao = mysql.createConnection(config.database)            
+                callback(null, results)
+            }
+        })
+    } else {
+        conexao.query(query, arguments, (error, results) => {
+            if (error) {
+                callback(error, null)
+            }
+            else {
+                conexao = mysql.createConnection(config.database)            
+                callback(null, results)
+            }
+        })
+    }
 }
 
 module.exports = doQuery

@@ -28,28 +28,31 @@ html
                     br
                     
                     section
-                        h3.major Cadastro de JMJ
-                        form#cadastrar_jmj
-                            .field.half.first
+                        h3.major DADOS DA JMJ
+                        form#excluir_jmj
+                            .field
                                 label(for="pais") País da JMJ
-                                input(type="text", name="pais", value="", placeholder="Exemplo: Polônia")
-                            .field.half
+                                input(type="text", name="pais", value=pais, disabled=1)
+                            .field
                                 label(for="cidade") Cidade da JMJ
-                                input(type="text", name="cidade", value="", placeholder="cidade")                            
-                            .field.half.first
+                                input(type="text", name="cidade", value=cidade,  disabled=1)                            
+                            .field
                                 label(for="ano") Ano da JMJ
-                                input(type="text", name="ano", value="", placeholder="Exemplo: 2019")
-                            .field.half
+                                input(type="text", name="ano", value=ano,  disabled=1)
+                            .field
                                 label(for="periodo") Periodo da JMJ
-                                input(type="text", name="periodo", value="", placeholder="Exemplo: 08/12/19 até 10/12/19")
+                                input(type="text", name="periodo", value=periodo,  disabled=1)
                             .field
                                 label(for="lema") Lema da JMJ
-                                input(type="text", name="lema", value="", placeholder="Lema")
+                                input(type="text", name="lema", value=lema,  disabled=1)
+                            .field                                
+                                input#confirmar_deletar(type='checkbox', name='confirmar_deletar')
+                                label(for='confirmar_deletar') Deseja Realmente Excluir?
                             ul.actions
                                 li
-                                    input.special(type="submit", value="Cadastrar JMJ")
+                                    input#excluir(type="submit", value="Deletar JMJ", disabled=1, style="background: #FE514E; color: #ffffff")
                                 li
-                                    a.button(href="/jmj") Cancelar 
+                                    a.button.special(href="/jmj") Voltar 
             // Footer
             footer#footer
                 p.copyrigh
@@ -60,4 +63,5 @@ html
 
 //scripts
 script(src="/assets/js/jquery.min.js")
-script(src="/assets/js/cadastrar/cadastrar_jmj.js")
+script(src="/assets/js/util.js")
+script(src="/assets/js/excluir/excluir_jmj.js")

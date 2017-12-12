@@ -42,7 +42,16 @@ function initialize(passport){
                 })
             }
         })
-    }))
+    }))   
 }
 
-module.exports = initialize
+function isAuthenticated(req, res, next) {
+    if (req.user) {
+        return next()
+    } else {
+        res.redirect('/login')
+    }
+}
+
+module.exports.initialize = initialize
+module.exports.isAuthenticated = isAuthenticated

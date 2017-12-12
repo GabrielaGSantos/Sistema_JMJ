@@ -48,6 +48,7 @@ routes.grupo(app)
 routes.peregrino(app)
 routes.outros(app)
 routes.pagamentos(app)
+routes.listar(app)
 
 // Inicializar Servidor
 var config = require('./config.json')

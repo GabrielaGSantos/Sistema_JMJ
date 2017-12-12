@@ -30,22 +30,21 @@ html
                     section
                         h3.major DADOS DA JMJ
                         form(method="post", action="#")
-                            .field.titulo.visualizar
-                                label(for="pais") País da JMJ
-                            .field.titulo
-                                input#demo-name(type="text", name="cidade", value="", placeholder="cidade")                            
                             .field
-                                label(for="pais") Ano da JMJ
-                                input#demo-name(type="text", name="pais", value="", placeholder="Exemplo: 2019")
+                                label(for="pais") País da JMJ
+                                input(type="text", name="pais", value=pais, disabled=1)
+                            .field
+                            label(for="cidade") Cidade da JMJ
+                                input(type="text", name="cidade", value=cidade,  disabled=1)                            
+                            .field
+                                label(for="ano") Ano da JMJ
+                                input(type="text", name="ano", value=ano,  disabled=1)
                             .field
                                 label(for="periodo") Periodo da JMJ
-                                input#demo-name(type="text", name="periodo", value="", placeholder="Exemplo: 08/12/19 até 10/12/19")
+                                input(type="text", name="periodo", value=periodo,  disabled=1)
                             .field
                                 label(for="lema") Lema da JMJ
-                                input#demo-name(type="text", name="lema", value="", placeholder="Lema")
-                            .field
-                                label(for="observacao") Observações
-                                textarea#demo-message(name="observacao", placeholder="Anotações", rows="6")
+                                input(type="text", name="lema", value=lema,  disabled=1)
                             ul.actions
                                 li
                                     a.button.special(href="/jmj") Voltar 

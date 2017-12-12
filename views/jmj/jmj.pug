@@ -28,6 +28,7 @@ html
                     
                     section
                         h3.major Lista de JMJ'S
+                        h4= message
                         .table-wrapper
                             table
                                 thead
@@ -37,17 +38,8 @@ html
                                         th(style="padding-left: 21em") Visualizar Detalhes da JMJ
                                         th Editar Dados
                                         th Excluir JMJ
-                                tbody
-                                    tr
-                                        td 2019
-                                        td &emsp; &emsp; 1
-                                        td(style="padding-left: 20em") 
-                                            a.button(href="/jmj/visualizar") Visualizar 
-                                        td(style="padding-right: 2.1em")  
-                                            a.button(href="#") Editar 
-                                        td
-                                            a.button(href="#") Excluir                                                                       
-                                
+                                tbody#lista_jmj                                                                                                        
+                              
                             a.button.special(href="/jmj/cadastrar" style="margin-left: 60em") Cadastrar JMJ                                            
                                             
                         
@@ -58,3 +50,7 @@ html
                     a(href="https://html5up.net") GABRIELA
                     | .
 #bg
+
+//scripts
+script(src="/assets/js/jquery.min.js")
+script(src="/assets/js/listar/listar_jmj.js")

@@ -1,25 +1,36 @@
 // Rotas principais
-function inicializarRotas(app){ 
-    
-        app.get('/outros',function(req,res){
-            res.render('outros/outros')
-        })
-    
-        app.get('/outros/paroquias/cadastrar',function(req,res){
-            res.render('outros/paroquias/cadastrar')
-        })
+function inicializarRotas(app) {
+    var localStrategy = require('../login')
 
-        app.get('/outros/funcoes/cadastrar',function(req,res){
-            res.render('outros/funcoes/cadastrar')
+    app.get('/outros', localStrategy.isAuthenticated, function (req, res) {
+        res.render('outros/outros', {
+            usuario: req.user.nome.split(' ')[0]
         })
+    })
 
-        app.get('/outros/agencia/cadastrar',function(req,res){
-            res.render('outros/agencia/cadastrar')
+    app.get('/outros/paroquias/cadastrar', localStrategy.isAuthenticated, function (req, res) {
+        res.render('outros/paroquias/cadastrar', {
+            usuario: req.user.nome.split(' ')[0]
         })
+    })
 
-        app.get('/outros/custos/cadastrar',function(req,res){
-            res.render('outros/custos/cadastrar')
+    app.get('/outros/funcoes/cadastrar', localStrategy.isAuthenticated, function (req, res) {
+        res.render('outros/funcoes/cadastrar', {
+            usuario: req.user.nome.split(' ')[0]
         })
-    }
-    
-    module.exports = inicializarRotas
+    })
+
+    app.get('/outros/agencia/cadastrar', localStrategy.isAuthenticated, function (req, res) {
+        res.render('outros/agencia/cadastrar', {
+            usuario: req.user.nome.split(' ')[0]
+        })
+    })
+
+    app.get('/outros/custos/cadastrar', localStrategy.isAuthenticated, function (req, res) {
+        res.render('outros/custos/cadastrar', {
+            usuario: req.user.nome.split(' ')[0]
+        })
+    })
+}
+
+module.exports = inicializarRotas
