@@ -186,7 +186,6 @@
 		font-weight: 600;
 		line-height: 1.5;
 		margin: 0 0 1rem 0;
-		text-transform: uppercase;
 		letter-spacing: 0.2rem;
 	}
 
@@ -374,7 +373,6 @@
 		letter-spacing: 0.2rem;
 		line-height: 1.5;
 		margin: 0 0 1rem 0;
-		text-transform: uppercase;
 	}
 
 	input[type="text"],
@@ -987,7 +985,7 @@
 		color: #ffffff !important;
 		cursor: pointer;
 		display: inline-block;
-		font-size: 0.8rem;
+		font-size: .9rem;
 		font-weight: 300;
 		height: 2.75rem;
 		letter-spacing: 0.2rem;
@@ -996,7 +994,6 @@
 		padding: 0 1.25rem 0 1.35rem;
 		text-align: center;
 		text-decoration: none;
-		text-transform: uppercase;
 		white-space: nowrap;
 	}
 
@@ -1103,7 +1100,7 @@
 			-webkit-transition-delay: 0.75s;
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
-			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../css/images/overlay.png");
+			background-image: linear-gradient(to top, rgba(30, 31, 34, 0.8), rgba(30, 31, 34, 0.8)), url("../css/images/overlay.png");
 			background-size: auto, 256px 256px;
 			background-position: center, center;
 			background-repeat: no-repeat, repeat;
@@ -1290,9 +1287,8 @@
 				}
 
 			#header .content p {
-				text-transform: uppercase;
 				letter-spacing: 0.2rem;
-				font-size: 0.8rem;
+				font-size: 1rem;
 				line-height: 2;
 			}
 			
@@ -1324,7 +1320,6 @@
 					height: 2.75rem;
 					line-height: 2.75rem;
 					padding: 0 1.25rem 0 1.45rem;
-					text-transform: uppercase;
 					letter-spacing: 0.2rem;
 					font-size: 0.8rem;
 					border-bottom: 0;
@@ -1556,10 +1551,9 @@
 
 		#footer .copyright {
 			letter-spacing: 0.2rem;
-			font-size: 0.6rem;
+			font-size: 0.5rem;
 			opacity: 0.75;
 			margin-bottom: 0;
-			text-transform: uppercase;
 		}
 
 		body.is-article-visible #footer {
@@ -1749,5 +1743,4 @@
 		top: 10px;
 		}
 	
-	
-			}
+}

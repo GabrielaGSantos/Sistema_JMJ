@@ -28,26 +28,30 @@ html
                     br
                     
                     section
-                        h3.major DADOS DA JMJ
-                        form(method="post", action="#")
+                        h3.major Edição de dados da JMJ
+                        form#editar_jmj
                             .field.half.first
-                                label(for="pais") País
-                                input(type="text", name="pais", value=pais, disabled=1)
+                                label(for="pais") País*
+                                input#pais(type="text", name="pais", value=pais, placeholder=pais)
                             .field.half
                                 label(for="cidade") Cidade
-                                input(type="text", name="cidade", value=cidade,  disabled=1)                            
+                                input#cidade(type="text", name="cidade", value=cidade, placeholder=cidade)                            
                             .field.half.first
-                                label(for="ano") Ano
-                                input(type="text", name="ano", value=ano,  disabled=1)
+                                label(for="ano") Ano*
+                                input#ano(type="text", name="ano", value=ano, placeholder=ano)
                             .field.half
-                                label(for="periodo") Periodo
-                                input(type="text", name="periodo", value=periodo,  disabled=1)
+                                label(for="periodo") Período
+                                input#periodo(type="text", name="periodo", value=periodo, placeholder=periodo)
                             .field
-                                label(for="lema") Lema
-                                input(type="text", name="lema", value=lema,  disabled=1)
+                                label(for="lema") Lema*
+                                input#lema(type="text", name="lema", value=lema, placeholder=lema)
+                            label *Campos Obrigatórios
                             ul.actions(style="text-align: right")
                                 li
-                                    a.button.special(href="/jmj") Voltar 
+                                    a.button(href="/jmj") Cancelar 
+                                li
+                                    input.special(type="submit", value="Salvar Edição")
+                                
             // Footer
             footer#footer
                 p.copyrigh
@@ -55,3 +59,7 @@ html
                     a(href="https://html5up.net") GABRIELA
                     | .
 #bg
+
+//scripts
+script(src="/assets/js/jquery.min.js")
+script(src="/assets/js/editar/editar_jmj.js")

@@ -25,21 +25,18 @@ html
                 header
                     span.avatar
                         img(src="images/avatar.jpg", alt="", width="100em")
-                    h1 LOGIN
+                    h2 Escolha de JMJ
                     p= message
 
-                    form(method="post", action="/login")
+                    form(method="post", action="/verificar_login")
                         .field
-                            input#name(type="text", name="cpf", placeholder="CPF")
-                        .field
-                            input#email(type="password", name="senha", placeholder="Senha")                        
+                            .select-wrapper
+                                select#escolher_jmj(name="escolher")
+                                    option(value="") JMJ
                         ul.actions
                             li
-                                input.special(type="submit", value="Entrar")
-                                
-                hr
-                a(for="redefinir_senha") Esqueci minha senha
-                
+                                input.special(type="submit", value="Acessar")                                
+                        hr                
             // Footer
             footer#footer
                 ul.copyright

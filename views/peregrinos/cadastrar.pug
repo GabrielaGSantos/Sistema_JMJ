@@ -32,25 +32,31 @@ html
                         form(method="post", action="#")
                             .field
                                 label(for="nome") Nome Completo
-                                input#demo-name(type="text", name="nome", value="", placeholder="")
-                            label(for="nome") Sexo
-                            .field                               
+                                input#demo-name(type="text", name="nome", value="", placeholder="")                            
+                            .field.half.first    
+                                label(for="nome") Sexo                           
                                 input#demo-priority-low(type="radio", name="demo-priority", checked="")
                                 label(for="demo-priority-low") Feminino
                                 input#demo-priority-high(type="radio", name="demo-priority", )
                                 label(for="demo-priority-high") Masculino
-                            .field
+                            .field.half                              
+                                label(for="status") Funcao
+                                .select-wrapper
+                                    select#demo-category(name="status")
+                                        option(value="4") - Peregrino -
+                                        option(value="2") Catequista
+                                        option(value="3") Apoio
+                            .field.half.first   
                                 label(for="cpf") CPF
                                 input#demo-name(type="text", name="cpf", value="", placeholder="Exemplo: 999.999.999-99")
-                            .field.half.first
-                                label(for="senha") Senha
-                                input#demo-name(type="password", name="senha", value="", placeholder="")
+                            
                             .field.half
-                                label(for="senha") Confirmar Senha
-                                input#demo-name(type="password", name="senha", value="", placeholder="")
-                            .field.half.first
                                 label(for="rg") RG
                                 input#demo-name(type="text", name="rg", value="", placeholder="")
+                            
+                            .field.half.first
+                                label(for="passaporte") Passaporte
+                                input#demo-name(type="text", name="passaporte", value="", placeholder="")
                             .field.half
                                 label(for="status") Status do Peregrino
                                 .select-wrapper
@@ -59,14 +65,11 @@ html
                                         option(value="A") Ativo
                                         option(value="I") Inativo
                             .field.half.first
-                                label(for="passaporte") Passaporte
-                                input#demo-name(type="text", name="passaporte", value="", placeholder="")
-                            .field.half
-                                label(for="qntd_padrinhos") Quantidade de Padrinhos
-                                input#demo-name(type="text", name="qntd_padrinhos", value="", placeholder="")
-                            .field
                                 label(for="telefone") Telefone Peregrino
                                 input#demo-name(type="text", name="telefone", value="", placeholder="Exemplo: (xx) 99999-9999, (xx) 00000-0000 ...")
+                            .field.half
+                                label(for="qntd_padrinhos") Quantidade de Padrinhos
+                                input#demo-name(type="text", name="qntd_padrinhos", value="", placeholder="")                            
                             .field
                                 label(for="contato_emergencia") Contato(s) de Emergência
                                 input#demo-name(type="text", name="contato_emergencia", value="", placeholder="Exemplo: Mãe: Dona Maria telefone: (xx) 99999-9999 ...")
@@ -86,7 +89,7 @@ html
                                         option(value="I") 2
                             .field
                                 label(for="observacao") Observações
-                                textarea#demo-message(name="observacao", placeholder="Anotações", rows="6")
+                                textarea#demo-message(name="observacao", placeholder="Anotações", rows="4")
                             ul.actions
                                 li
                                     input.special(type="submit", value="Cadastrar Peregrino")

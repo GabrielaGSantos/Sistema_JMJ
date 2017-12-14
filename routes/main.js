@@ -9,7 +9,7 @@ function inicializarRotas(app, passport) {
 
     app.get('/', localStrategy.isAuthenticated, function (req, res) {
         res.render('index', {
-            ano_jmj: ano_jmj,
+            ano_jmj: req.params.ano_jmj,
             lema_jmj: lema_jmj,
             usuario: req.user.nome.split(' ')[0]
         })
@@ -17,9 +17,17 @@ function inicializarRotas(app, passport) {
 
     app.get('/login', function (req, res) {
         res.render('login', { message: req.flash('login') })
+    })    
+
+    app.post('/login/', passport.authenticate('local', { failureRedirect: '/login' }), (req, res) => {
+        res.redirect('/verificar_login')
     })
 
-    app.post('/login', passport.authenticate('local', { failureRedirect: '/login' }), (req, res) => {
+    app.get('/verificar_login', function (req, res) {
+        res.render('verificar_login', { message: req.flash('login') })
+    })
+
+    app.post('/verificar_login/', passport.authenticate('local', { failureRedirect: '/login' }), (req, res) => {
         res.redirect('/')
     })
 }

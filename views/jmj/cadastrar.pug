@@ -31,25 +31,27 @@ html
                         h3.major Cadastro de JMJ
                         form#cadastrar_jmj
                             .field.half.first
-                                label(for="pais") País da JMJ
+                                label(for="pais") País*
                                 input(type="text", name="pais", value="", placeholder="Exemplo: Polônia")
                             .field.half
-                                label(for="cidade") Cidade da JMJ
+                                label(for="cidade") Cidade
                                 input(type="text", name="cidade", value="", placeholder="cidade")                            
                             .field.half.first
-                                label(for="ano") Ano da JMJ
+                                label(for="ano") Ano*
                                 input(type="text", name="ano", value="", placeholder="Exemplo: 2019")
                             .field.half
-                                label(for="periodo") Periodo da JMJ
+                                label(for="periodo") Período
                                 input(type="text", name="periodo", value="", placeholder="Exemplo: 08/12/19 até 10/12/19")
                             .field
-                                label(for="lema") Lema da JMJ
+                                label(for="lema") Lema*
                                 input(type="text", name="lema", value="", placeholder="Lema")
-                            ul.actions
-                                li
-                                    input.special(type="submit", value="Cadastrar JMJ")
+                            label *Campos Obrigatórios
+                            ul.actions(style="text-align: right")
                                 li
                                     a.button(href="/jmj") Cancelar 
+                                li
+                                    input.special(type="submit", value="Cadastrar")
+                                
             // Footer
             footer#footer
                 p.copyrigh

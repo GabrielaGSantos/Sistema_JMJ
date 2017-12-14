@@ -30,29 +30,33 @@ html
                     section
                         h3.major DADOS DA JMJ
                         form#excluir_jmj
-                            .field
-                                label(for="pais") País da JMJ
+                            .field.half.first
+                                label(for="pais") País
                                 input(type="text", name="pais", value=pais, disabled=1)
-                            .field
-                                label(for="cidade") Cidade da JMJ
+                            .field.half
+                                label(for="cidade") Cidade
                                 input(type="text", name="cidade", value=cidade,  disabled=1)                            
-                            .field
-                                label(for="ano") Ano da JMJ
+                            .field.half.first
+                                label(for="ano") Ano
                                 input(type="text", name="ano", value=ano,  disabled=1)
-                            .field
-                                label(for="periodo") Periodo da JMJ
+                            .field.half
+                                label(for="periodo") Período
                                 input(type="text", name="periodo", value=periodo,  disabled=1)
                             .field
-                                label(for="lema") Lema da JMJ
+                                label(for="lema") Lema
                                 input(type="text", name="lema", value=lema,  disabled=1)
-                            .field                                
-                                input#confirmar_deletar(type='checkbox', name='confirmar_deletar')
-                                label(for='confirmar_deletar') Deseja Realmente Excluir?
-                            ul.actions
-                                li
-                                    input#excluir(type="submit", value="Deletar JMJ", disabled=1, style="background: #FE514E; color: #ffffff")
+                            .field
+                                label(for="nome") Deseja realmente excluir?                           
+                                input#demo-priority-low(type="radio", name="demo-priority", )
+                                label(for="demo-priority-low") Sim
+                                input#demo-priority-high(type="radio", name="demo-priority", checked="")
+                                label(for="demo-priority-high") Não
+                            ul.actions(style="text-align: right")
                                 li
                                     a.button.special(href="/jmj") Voltar 
+                                li
+                                    input#excluir(type="submit", value="Excluir", disabled=1, style="background: #FE514E; color: #ffffff")
+                                
             // Footer
             footer#footer
                 p.copyrigh

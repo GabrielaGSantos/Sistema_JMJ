@@ -1,21 +1,18 @@
 $(document).ready(() => {
-    $("#confirmar_deletar").click(() => {
-        if ($("#confirmar_deletar").is(":checked")) {
-            $("#excluir").prop('disabled', false);
-        }
-        else {
-            $("#excluir").prop('disabled', true);
-        }
+    $("#demo-priority-low").click(() => {
+        $("#excluir").prop('disabled', false);
+    })
+
+    $("#demo-priority-high").click(() => {
+        $("#excluir").prop('disabled', true);
     })
 
     $("#excluir_jmj").submit(function (e) {
-
-        var url = "/jmj/excluir"; // the script where you handle the form input.
+        var url = window.location.pathname; // the script where you handle the form input.
 
         $.ajax({
             type: "POST",
             url: url,
-            data: $("#excluir_jmj").serialize(), // serializes the form's elements.
             dataType: 'json',
             success: function (data) {
                 if (data.error)

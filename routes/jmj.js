@@ -41,18 +41,47 @@ function inicializarRotas(app) {
         })
     })
 
-    app.get('/jmj/editar', localStrategy.isAuthenticated, function (req, res) {
-        res.render('jmj/editar', {
-            usuario: req.user.nome.split(' ')[0]
+    app.get('/jmj/editar/:id_jmj', localStrategy.isAuthenticated, function (req, res) {
+        database.doQuery(`SELECT * FROM jmj WHERE id_jmj=${req.params.id_jmj}`, (error, results) => {
+            res.render('jmj/editar', {
+                pais: results[0].pais, cidade: results[0].cidade, ano: results[0].ano, periodo: results[0].periodo, lema: results[0].lema,
+                usuario: req.user.nome.split(' ')[0]
+            })
         })
     })
 
-    app.get('/jmj/excluir', localStrategy.isAuthenticated, function (req, res) {
-        database.doQuery(`SELECT * FROM jmj WHERE id_jmj=${req.query.id_jmj}`, (error, results) => {
+    app.post('/jmj/editar/:id_jmj', function (req, res) {
+        if (req.body.pais == "")
+            res.send({ error: `É necessário preencher o país` })
+        else if (req.body.ano == "")
+            res.send({ error: `É necessário preencher o ano` })
+        else if (req.body.lema == "")
+            res.send({ error: `É necessário preencher o lema` })
+        else {
+            database.doQuery(`UPDATE jmj SET ? WHERE id_jmj=${req.params.id_jmj}`, (error, results) => {
+                if (error)
+                    res.send({ error: `ERRO AO EDITAR JMJ: \n ${error}` })
+                else
+                    res.send({ message: "JMJ Editada com Sucesso" })
+            }, req.body)
+        }
+    })
+
+    app.get('/jmj/excluir/:id_jmj', localStrategy.isAuthenticated, function (req, res) {
+        database.doQuery(`SELECT * FROM jmj WHERE id_jmj=${req.params.id_jmj}`, (error, results) => {
             res.render('jmj/excluir', {
                 pais: results[0].pais, cidade: results[0].cidade, ano: results[0].ano, periodo: results[0].periodo, lema: results[0].lema,
                 usuario: req.user.nome.split(' ')[0]
             })
+        })
+    })
+
+    app.post('/jmj/excluir/:id_jmj', localStrategy.isAuthenticated, function (req, res) {
+        database.doQuery(`DELETE FROM jmj WHERE id_jmj=${req.params.id_jmj}`, (error, results) => {
+            if (error)
+                res.send({ error: `ERRO AO EXCLUIR JMJ: \n ${error}` })
+            else
+                res.send({ message: "JMJ Excluída com Sucesso" })
         })
     })
 }
