@@ -39,15 +39,18 @@ html
                                     select#demo-category(name="estado_grupo")
                                         option(value="") - Estado -
                                         option(value="MT") Mato Grosso
-                            .field
+                            .field.half.first
                                 label(for="catequista_responsavel") Catequista Responsável
                                 input#demo-name(type="text", name="catequista_responsavel", value="", placeholder="nome")
+                            .field.half
+                                label(for="catequista_responsavel") Número do Grupo
+                                input#demo-name(type="text", name="catequista_responsavel", value="", placeholder="1")
                             .field
                                 label(for="custo_aproximado") Custo Aproximado 
                                 input#demo-name(type="text", name="custo_aproximado", value="", placeholder="(R$ 9.999.999,99)")
                             .field
                                 label(for="observacao") Observações
-                                textarea#demo-message(name="observacao", placeholder="Anotações", rows="6")
+                                textarea#demo-message(name="observacao", placeholder="Anotações", rows="4")
                             ul.actions
                                 li
                                     input.special(type="submit", value="Cadastrar Grupo")

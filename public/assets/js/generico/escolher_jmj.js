@@ -6,8 +6,9 @@ $(document).ready(() => {
             console.log(data)
             data.forEach(jmj => {
                 $("#escolher_jmj").append(`
-                <option value="ano">${jmj.ano}</option>`)
+                <option value="${jmj.ano}">${jmj.ano}</option>`)
             });
         }
     });
 })
+

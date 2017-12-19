@@ -8,12 +8,12 @@ html
         title Sistema JMJ
         meta(charset="utf-8")
         meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no")
-        link(rel="stylesheet", href="assets/css/main.css")
-        link(rel="stylesheet", href="assets/icomoon/style.css")
+        link(rel="stylesheet", href="/assets/css/main.css")
+        link(rel="stylesheet", href="/assets/icomoon/style.css")
         //if lte IE 9
-            link(rel="stylesheet", href="assets/css/ie9.css")
+            link(rel="stylesheet", href="/assets/css/ie9.css")
         noscript
-            link(rel="stylesheet", href="assets/css/noscript.css")
+            link(rel="stylesheet", href="/assets/css/noscript.css")
     body
         // Wrapper
         #wrapper
@@ -24,20 +24,27 @@ html
                     span.icon-icone(style="font-size: 80px; line-height: 5.4rem;")
                 .content
                     .inner
-                        h1 JMJ 2019#{ano_jmj}
+                        h1 JMJ #{ano_jmj}
                         p #{lema_jmj}
                 nav
                     ul
-                        li
-                            a(href="/jmj")  &nbsp JMJ'S &nbsp 
-                        li
-                            a(href="/grupos") &nbsp GRUPOS &nbsp 
-                        li
-                            a(href="/peregrinos") PEREGRINOS                                              
-                        li
-                            a(href="/pagamento") PAGAMENTOS
-                        li
-                            a(href="/outros") OUTROS
+                        case permissoes
+                            when 1
+                                li
+                                    a(href="/jmj")  &nbsp JMJ'S &nbsp 
+                                li
+                                    a(href="/grupos") &nbsp GRUPOS &nbsp 
+                                li
+                                    a(href="/peregrinos") PEREGRINOS                                              
+                                li
+                                    a(href="/pagamento") PAGAMENTOS
+                                li
+                                    a(href="/outros") OUTROS
+                            when 0
+                                li
+                                    a(href="/jmj")  &nbsp JMJ'S &nbsp 
+                                li
+                                    a(href="/grupos") &nbsp GRUPOS &nbsp 
             br 
             // Footer
             footer#footer

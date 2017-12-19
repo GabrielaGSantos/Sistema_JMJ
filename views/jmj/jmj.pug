@@ -36,11 +36,14 @@ html
                                     th País
                                     th Quantidade de Grupos 
                                     th Visualizar Detalhes
-                                    th Editar Dados
-                                    th Excluir JMJ
+                                    case permissoes
+                                        when 1
+                                            th Editar Dados
+                                            th Excluir JMJ
                                 tbody#lista_jmj                                                                                                        
-                              
-                            a.button.special(href="/jmj/cadastrar" style="margin-left: 60em") Cadastrar JMJ                                            
+                        case permissoes
+                            when 1
+                                a.button.special(href="/jmj/cadastrar" style="margin-left: 60em") Cadastrar JMJ                                            
                                             
                         
             // Footer
